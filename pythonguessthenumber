@@ -1,0 +1,22 @@
+import random 
+n=random.randint(1,100)
+#n=30
+previousguess= 50
+print("I am thinking of a number between 1 and 100.")
+print("Can you guess what the number is?")
+guess =int(input("Enter your guess:"))
+hint=""
+count = 1
+while (guess !=n):
+    if previousguess <= guess < n:
+        hint="Hot!"
+    elif n < guess <= previousguess:
+        hint="Hot!"
+    else:
+        hint="Cold!"
+    previousguess = guess
+    guess = int(input(hint+ "\nEnter your guess:"))
+    count = count + 1
+else:
+    print ("You Win!")
+print("You solved it in",count,"guesses.")
